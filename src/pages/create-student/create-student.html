@@ -1,0 +1,36 @@
+<!--
+  Generated template for the CreateStudentPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle icon-only>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Create student
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <form (ngSubmit)="submitStudent()">
+    <ion-item>
+      <ion-label>Name</ion-label>
+      <ion-input type="text" [(ngModel)]="student.name" name="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Address</ion-label>
+      <ion-input type="text" [(ngModel)]="student.address" name="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Age</ion-label>
+      <ion-input type="text" [(ngModel)]="student.age" name="name"></ion-input>
+    </ion-item>
+    <br/><br/>
+    <button ion-button type="submit" block>Add student</button>
+  </form>
+</ion-content>
