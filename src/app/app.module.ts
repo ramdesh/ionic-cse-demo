@@ -3,12 +3,14 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import {ListStudentsPage} from "../pages/list-students/list-students";
-import {CreateStudentPage} from "../pages/create-student/create-student";
-import {StudentDetailsPage} from "../pages/student-details/student-details";
+import { ListStudentsPage } from '../pages/list-students/list-students';
+import { CreateStudentPage } from '../pages/create-student/create-student';
+import { StudentDetailsPage } from '../pages/student-details/student-details';
+import { StudentService } from '../services/student-service';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,7 @@ import {StudentDetailsPage} from "../pages/student-details/student-details";
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -33,6 +36,7 @@ import {StudentDetailsPage} from "../pages/student-details/student-details";
   providers: [
     StatusBar,
     SplashScreen,
+    StudentService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
